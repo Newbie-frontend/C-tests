@@ -4,7 +4,7 @@
 int main()
 {
     int count;
-    printf("Enter how many numbers is in each array: ");
+    printf("Enter how many numbers are in each array: ");
     scanf("%d", &count);
     int firstNums[count];
     int secondNums[count];
