@@ -7,7 +7,7 @@ long getFibbTerm (int t) {
 }
 
 int main() {
-    printf("Enter the range : ");
+    printf("Enter how many Fibonacci number you want to see : ");
     int n;
     scanf("%d", &n);
     int t;
