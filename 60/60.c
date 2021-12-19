@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 int main() {
     float tBugun, T, K;
     T = 10000; K = 10000;
@@ -13,4 +13,3 @@ int main() {
 
 
     return 0;
-}
