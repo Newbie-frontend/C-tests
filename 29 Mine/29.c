@@ -1,22 +1,16 @@
 #include <stdio.h>
-#include <locale.h>
-#include <windows.h>
-
 
 int main() {
-    int  yas ,enGenc = 0, count = 1;
-    setlocale(LC_ALL, "Turkish");
-    printf("türkçeç\n");
-    system("color f9");
-    while (1==1)
+    int  yas ,enGenc = 0, count = 1;// deyisgenleri belirliyoruz
+    while (1) // sonsuz dongu yazip, sart ve break ile cikiyoruz
     {
         printf ("yasi giriniz (Durdurmak icin 0) : ");
         scanf ("%d", &yas);
-        if (yas > 1000 || yas < 0)
+        if (yas > 1000 || yas < 0)//sayiyi kontrol ediyoruz
             printf ("Hata!! Lutfen yas degerine dikkat ediniz\n");
-        else if (yas == 0)
+        else if (yas == 0)//0 girdiginde donguden cikiyoruz
             break;
-        else {
+        else { // en genci bulup , kactane ondan olursa "count" degisgenine atiyoruz
             if (enGenc == 0)
                 enGenc = yas;
             else if (yas == enGenc)
@@ -27,7 +21,7 @@ int main() {
             }
         }
     }
-    printf("-------------------------------------\n");
+    printf("-------------------------------------\n");//Verileri yadiriyoruz
     printf ("En genc katilimci yasi %d\n", enGenc);
     printf ("( Bu yasta toplam %d kisi giris yapti )\n", count);
 

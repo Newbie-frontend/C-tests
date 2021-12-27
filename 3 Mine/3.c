@@ -7,10 +7,10 @@ int main() {
     {
         buyuk = i;
         kucuk = i + 32;// Kucuk harflar 32 sayi buyuklerden daha buyuk
-        printf("%d\t\t%c\t\t%c\n", i, buyuk, kucuk);//Guzellestirmek icin tab kullaniyoruz
+        printf("%d\t\t%c\t\t%c\n", i, buyuk, kucuk);
+        //Guzellestirmek icin tab kullaniyoruz
     }
 
     printf("\n");
-
     return 0;
 }
