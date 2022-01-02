@@ -1,0 +1,5 @@
+Mark Zakerberg,5000,0.12
+Steve Jobs,10000,0.1
+Jeff Bezos,7000,0.15
+Mahatma Gandi,12000,0.22
+Queen Elizabeth,15000,0.2
