@@ -1,4 +1,4 @@
-#include <stdio.h>
+9#include <stdio.h>
 #include <stdlib.h>
 
 int enbuyuk(int a[], int n)
