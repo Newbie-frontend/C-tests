@@ -1,4 +1,4 @@
-9#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int enbuyuk(int a[], int n)
@@ -60,7 +60,6 @@ int main()
     int peynirToplami[8];
     int enAzAile;
     int enCokPeynir;
-    int temp;
 
     for (int i = 0; i < 8; i++)
     {
