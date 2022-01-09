@@ -9,7 +9,7 @@ int main()
     if (fp == NULL)
     {
         printf("Unable to open the File\n");
-        return 1;
+        return 0;
     }
 
     long size;
