@@ -1,9 +1,4 @@
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <time.h>
-#include <stdlib.h>
-
 
 void ikilik(int s)
 {
@@ -16,7 +11,6 @@ void ikilik(int s)
         ikilik(s / 2);
         printf("%d", s % 2);
     }
-    return;
 }
 
 int main()
