@@ -11,7 +11,7 @@ int main(){
     fseek(fileP, -11L, SEEK_END);//dosyanin son elemanin basini buluruz
     size = ftell(fileP);
     count = (size / 13) + 1;//sayilar 11 haneli her hane 1 byte ve \n 2 byte
-    fseek(fileP, 0L, SEEK_SET);
+    fseek(fileP, 0L, SEEK_SET);//rewind(fileP);
     double kimlik[count];
     for (int i = 0; i < count; i++)
         fscanf(fileP, "%lf", &kimlik[i]);

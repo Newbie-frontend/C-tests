@@ -11,6 +11,7 @@ int main()
     //biri dosyayi almak icin(read) digeri sonuclari gondermek icin(write) 
     FILE *fp;
     FILE *fp2;
+    int a[5] = {};
     //dosya isimlerini kullanciden almak icin 2 dizi programa tanitiyoruz
     char puan[100];
     char sonuc[100];
