@@ -9,9 +9,7 @@ void bileklikCoz(int num, char *pc, int *ph, int *ps){
     }else if (a == 2)
     {
         *pc = 'K';
-    }
-    
-    
+    } 
     *ph = (num % 10000)/100;
     *ps =(num %100);
     

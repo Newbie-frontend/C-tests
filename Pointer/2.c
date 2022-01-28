@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int ara(int *dizip, int n, int m, int x, int *satir, int *sutun)
+int ara(int **dizip, int n, int m, int x, int *satir, int *sutun)
 {
-    *(dizip + 3) = 5;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            if (*(dizip + i + j) == x)
+            if (*(*(dizip + i) + j) == x)
             {
-                *satir = i;
-                *sutun = j;
+                *satir = i + 1;
+                *sutun = j + 1;
                 return 1;
             }
         }
@@ -21,13 +21,16 @@ int ara(int *dizip, int n, int m, int x, int *satir, int *sutun)
 
 int main()
 {
-    int *dizip;
+    int **dizip;
     int sat;
     int sut;
     int n, m, number;
+    srand(time(NULL));
     printf("Satir ve sutunu giriniz : ");
     scanf("%d %d", &n, &m);
-    dizip = (int *)calloc(n*m, sizeof(int));
+    dizip = (int **)calloc(n, sizeof(int));
+    for (int i = 0; i < n; i++)
+        *(dizip + i) = (int *)calloc(m, sizeof(int));
     if (dizip == NULL)
     {
         printf("Unable to allocate memory\nExiting the program \n");
@@ -35,7 +38,15 @@ int main()
     }
     printf("Sayiyi giriniz : ");
     scanf("%d", &number);
-    ara(dizip, n, m, number, &sat, &sut);
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            *(*(dizip + i) + j) = rand() % 10;
+            printf("%d ", *(*(dizip + i) + j));
+        }
+        printf("\n");
+    }
     if (ara(dizip, n, m, number, &sat, &sut) == 1)
     {
         printf("Sayi var \n");

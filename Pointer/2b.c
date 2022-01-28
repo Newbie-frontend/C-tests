@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int ara(int *p, int x, int *satir, int *sutun)
+int ara(int p[][3], int x, int *satir, int *sutun)
 {
-    *(p + 3) = 5;
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            if (*(p + i + j) == x)
+            if (p[i][j] == x)
             {
-                *satir = i;
-                *sutun = j;
+                *satir = i + 1;
+                *sutun = j + 1;
                 return 1;
             }
         }
@@ -21,15 +21,16 @@ int ara(int *p, int x, int *satir, int *sutun)
 
 int main()
 {
+    srand(time(NULL));
     int dizi[3][3];
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
+            dizi[i][j] = rand() % 10;
             printf("%d  ", dizi[i][j]);
         }
         printf("\n");
-        
     }
     int sat, sut, number;
     printf("Sayiyi giriniz : ");
@@ -43,15 +44,6 @@ int main()
     }
     else
         printf("Sayi yok \n");
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            printf("%d  ", dizi[i][j]);
-        }
-        printf("\n");
-        
-    }
 
     return 0;
 }
