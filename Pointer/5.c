@@ -42,10 +42,10 @@ int main()
     scanf("%s", CY);
     printf("Girilen yonde kac kere cevrilecek : ");
     scanf("%d", &num);
-    printf("Sayilarin vevrilmeden onceki halleri : a\tb\tc\td \n");
-    printf("                                       %d\t%d\t%d\t%d \n", a, b, c, d);
+    printf("Sayilarin verilmeden onceki halleri   : a\tb\tc\td \n");
+    printf("                                         %d\t%d\t%d\t%d \n", a, b, c, d);
     cevir(num, CY, &a, &b, &c, &d);
-    printf("Sayilarin vevrildikten sonraki halleri : a\tb\tc\td \n");
+    printf("Sayilarin verildikten sonraki halleri : a\tb\tc\td \n");
     printf("                                         %d\t%d\t%d\t%d \n", a, b, c, d);
 
     return 0;
