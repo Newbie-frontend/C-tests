@@ -1,29 +1,30 @@
 #include <stdio.h>
 
-void serinoCoz(int num, char *a, int *b, int *c)
+void zinetSayisiniBul(double num, double ziynet, int *a, int *b, int *c, double *d)
 {
-    if (num / 1000 == 1)
-        *a = 'A';
-    else if (num / 1000 == 2)
-        *a = 'B';
-    else if (num / 1000 == 3)
-        *a = 'C';
-    *b = (num / 10) % 100;
-    *c = num % 10;
+    *a = (int)(num / ziynet);
+    *b = (int)((num - (*a) * ziynet) / (ziynet / 2));
+    *c = (int)((num - (*a) * ziynet - (*b) * (ziynet / 2)) / (ziynet / 4));
+    *d = num - (*a) * ziynet - (*b) * (ziynet / 2) - (*c) * (ziynet / 4);
 }
 
 int main()
 {
-    int num = 0;
-    int block, daire, arac;
-    while (num < 1000 || num >10000)
+    double para = -1, ziynet;
+    int tam, yarim, ceyrek;
+    double  geriKalan;
+    while (para < 0)
     {
-        printf("Arac tanitim karti seri numarasini giriniz : ");
-        scanf("%d", &num);
+        printf("Para miktarinizi giriniz (TL): ");
+        scanf("%lf", &para);
+        printf("Tam ziynet altini satis degerini giriniz : ");
+        scanf("%lf", &ziynet);
     }
-    serinoCoz(num, &block, &daire, &arac);
+    zinetSayisiniBul(para, ziynet, &tam, &yarim, &ceyrek, &geriKalan);
     printf("-----------------------------\n");
-    printf("Bu arac %c blokda %d nolu dairenin %d. aracidir \n", block, daire, arac);
+    printf("Elinizdeki para ile \n");
+    printf("%d adet tam, %d adet yarim ve %d adet de ceyrek altin alabilirsiniz.\n", tam, yarim, ceyrek);
+    printf("Kalan paraniz : %0.2lf \n", geriKalan);
 
     return 0;
 }
