@@ -1,34 +1,32 @@
 #include <stdio.h>
-#include <math.h>
 
-void ortalamayaYakiniBul(int *, float *, int *, int *);
+void ortalamayaYakiniBul(int *, int *, int *);
 
 int main()
 {
-    int dizi[9] = {9, 7, 3, 4, 11, 67, 25, 56, 34};
+    int dizi[9] = {9, 7, 3, 4, 11, 3, 25, 56, 11};
     int indis;
     int eleman;
-    float ortalama;
 
-    ortalamayaYakiniBul(dizi, &ortalama, &eleman, &indis);
-    printf("Ortalama: %0.2f \n", ortalama);
-    printf("En yakin eleman: %d\n", eleman);
+    ortalamayaYakiniBul(dizi, &eleman, &indis);
+    printf("\nIlk tekrarlayan: %d\n", eleman);
     printf("Indisi: %d \n", indis);
 
     return 0;
 }
-void ortalamayaYakiniBul(int *arr, float *average, int *num, int *index)
+void ortalamayaYakiniBul(int *arr, int *num, int *index)
 {
-    int total = 0;
-    for (int i = 0; i < 9; i++)
-        total += *(arr + i);
-    *average = total / 9;
-    *index = 0;
-    *num = *arr;
-    for (int i = 1; i < 9; i++)
-        if (fabs(*num - *average) > fabs(*(arr + i) - *average))
+    *index = -1;
+    for (int i = 0; i < 8 && *index == -1; i++)
+    {
+        for (int j = i + 1; j < 8; j++)
         {
-            *num = *(arr + i);
-            *index = i;
+            if (*(arr + i) == *(arr + j))
+            {
+                *num = *(arr + i);
+                *index = i;
+                break;
+            }
         }
+    }
 }
