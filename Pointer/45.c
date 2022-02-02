@@ -16,16 +16,14 @@ int main()
 }
 void eleme(int *arr, int i)
 {
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 9; i++)
     {
-        if (*(arr + i) == -1)
-            continue;
         int temp = *(arr + i);
-        for (int j = i + 1; j < 9; j++)
-            if (temp == *(arr + j))
-            {
-                *(arr + i) = -1;
-                *(arr + j) = -1;
-            }
+        int count = 0;
+        for (int j = 0; j < 9; j++)
+            if (*(arr + i) == *(arr + j))
+                count++;
+        if (count == 1)
+            *(arr + i) = -1;
     }
 }
