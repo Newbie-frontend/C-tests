@@ -21,7 +21,7 @@ int main()
     z = total / 100;
     u = (total - z * 100) / 10;
     n = total - z * 100 - u * 10;
-
+    // ikinci yontem
     // for (int i = 0; i < z; i++)
     //     str[i] = 'Z';
     // for (int i = z; i < z + u; i++)
