@@ -10,9 +10,7 @@ int main()
 {
     char sample[] = "ali.yilmaz@hotmail.com";
     char str1[50], str2[50], str3[50];
-    int sesli, sessiz;
-    printf("Cumleyi giriniz :");
-    scanf("%[^\n]", sample);
+
     emailBreak(sample, 1, str1);
     emailBreak(sample, 2, str2);
     emailBreak(sample, 3, str3);
@@ -21,20 +19,30 @@ int main()
     return 0;
 }
 
-void emailBreak(char *str, int num, char *par1)
+void emailBreak(char *str, int num, char *part)
 {
+    char *p;
+    char *p2;
+    p = strchr(str, '@');
+    p2 = strchr(p, '.');
     if (num == 1)
-        for (int i = 0; str[i] != '\0'; i++)
+        for (int i = 0; str[i] != '@'; i++)
         {
+            part[i] = str[i];
+            part[i + 1] = '\0';
         }
 
     else if (num == 2)
-        for (int i = 0; str[i] != '\0'; i++)
-        {
-        }
+    {
+        for (int i = 0; i < strlen(p) - strlen(p2) - 1; i++)
+            part[i] = p[i + 1];
+        part[strlen(p) - strlen(p2) - 1] = '\0';
+    }
 
     else if (num == 3)
-        for (int i = 0; str[i] != '\0'; i++)
-        {
-        }
+    {
+        for (int i = 0; i < strlen(p2) - 1; i++)
+            part[i] = p2[i + 1];
+        part[strlen(p2) - 1] = '\0';
+    }
 }
