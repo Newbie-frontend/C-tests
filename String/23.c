@@ -4,54 +4,30 @@
 #include <stdlib.h>
 #include <math.h>
 
-int gibigibi(char *p)
-{
-    int sayi = 0;
-    int length = 0;
-    for (int i = 0; *(p + i) != '\0'; i++)
-    {
-        if (*(p + i) > 47 && *(p + i) < 58)
-            length++;
-        else
-            break;
-    }
-    int x[length];
-    for (int i = 0; i < length; i++)
-    {
-        if (*(p + i) == 48)
-            x[i] = 0;
-        else if (*(p + i) == 49)
-            x[i] = 1;
-        else if (*(p + i) == 50)
-            x[i] = 2;
-        else if (*(p + i) == 51)
-            x[i] = 3;
-        else if (*(p + i) == 52)
-            x[i] = 4;
-        else if (*(p + i) == 53)
-            x[i] = 5;
-        else if (*(p + i) == 54)
-            x[i] = 6;
-        else if (*(p + i) == 55)
-            x[i] = 7;
-        else if (*(p + i) == 56)
-            x[i] = 8;
-        else if (*(p + i) == 57)
-            x[i] = 9;
-    }
-    for (int i = 0; i < length; i++)
-        sayi += x[i] * pow(10, length - 1 - i);
-
-    return sayi;
-}
-
 int main()
 {
-    char dizge[50];
-    int sayi;
-    printf("Sayisal icerikli dizgi : ");
-    scanf("%s", dizge);
-    sayi = gibigibi(dizge);
-    printf("Sayisal karsiligi : %d", sayi);
-    return 0;
+    char str[2][200];
+    int misra1;
+    int misra2;
+    int n = 0;
+    int count = 0;
+    printf("Cumleleri giriniz: \n");
+    for (int i = 0; i < 2; i++)
+        scanf(" %[^\n]", str[i]);
+    printf("--------------------------------------- \n");
+    misra1 = strlen(str[0]);
+    misra2 = strlen(str[1]);
+    for (int i = misra1 - 1; str[0][i] != ' '; i--)
+        count++;
+    for (int i = 0; i < count; i++)
+        if (str[0][misra1 - 1 - i] != str[1][misra2 - 1 - i])
+        {
+            printf("Girilen misralarda cinsali kafiye yoktur.");
+            n = 1;
+            break;
+        }
+    if (n == 0)
+        printf("Girilen misralarda cinsali kafiye vardir. \n");
+
+        return 0;
 }
