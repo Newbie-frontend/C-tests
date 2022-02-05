@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-void strstrip(char *str, int);
+void strstrip(char *, int);
 
 int main()
 {

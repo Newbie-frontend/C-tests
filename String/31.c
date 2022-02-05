@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-void strtoupper(char *str);
+void strtoupper(char *);
 
 int main()
 {

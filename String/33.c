@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-void spacemask(char *str);
+void spacemask(char *);
 
 int main()
 {
