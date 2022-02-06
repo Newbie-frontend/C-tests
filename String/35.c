@@ -8,7 +8,7 @@ void emailBreak(char *, int, char *);
 
 int main()
 {
-    char sample[] = "ali.yilmaz@hotmail.com";
+    char sample[] = "ali.yilmaz@gmail.edu.tr";
     char str1[50], str2[50], str3[50];
 
     emailBreak(sample, 1, str1);
