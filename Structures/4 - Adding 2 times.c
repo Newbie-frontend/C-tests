@@ -30,7 +30,6 @@ int main(int argc, char const *argv[])
 {
     //define and get variables
     zaman s1, s2;
-    int second;
     printf("Birinci zamani giriniz : ");
     scanf("%d:%d:%d", &s1.saat, &s1.dakika, &s1.saniye); // 23:30:20
     printf("ikinci zamani giriniz : ");
