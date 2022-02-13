@@ -1,0 +1,3 @@
+The Domain Name System is the hierarchical and decentralized naming system used to identify computers,
+ services, and other resources reachable through the Internet or other Internet Protocol networks. 
+The resource records contained in the DNS associate domain names with other forms of information.
