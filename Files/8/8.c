@@ -24,7 +24,7 @@ int main()
         return 1;
     }
     int i = 0;
-    while (!feof(fp))
+    while (!feof(fp)) // we could have a loop for a array elements but ...
     {
         fscanf(fp, "%ld %d %d %d %d %d %d", &x[i].no, &x[i].a[0], &x[i].a[1], &x[i].a[2], &x[i].a[3], &x[i].a[4], &x[i].a[5]);
         i++;
