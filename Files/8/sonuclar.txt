@@ -1,0 +1,20 @@
+9424073 65.83
+9424071 51.00
+9424070 73.33
+9424069 50.00
+9424068 35.00
+9424066 45.00
+9424064 25.00
+9424063 50.00
+9424032 60.00
+9424062 70.00
+9424061 80.00
+9424060 90.00
+9424046 54.67
+1. dersin sinif ortalamasi : 47.38
+2. dersin sinif ortalamasi : 56.00
+3. dersin sinif ortalamasi : 59.00
+4. dersin sinif ortalamasi : 55.31
+5. dersin sinif ortalamasi : 62.69
+6. dersin sinif ortalamasi : 65.69
+Sinif ortalamasi : 57.68

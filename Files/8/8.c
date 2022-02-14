@@ -17,7 +17,7 @@ int main()
     double dersAve[6] = {0};
     double sinifAve = 0;
     fp = fopen("sinif.txt", "r");
-    fp2 = fopen("sonuclar.txt", "r");
+    fp2 = fopen("sonuclar.txt", "w");
     if (fp == NULL)
     {
         printf("Unable to open file\n");
@@ -39,6 +39,11 @@ int main()
 
     for (int k = 0; k < 6; k++)
         sinifAve += dersAve[k] / 6;
+    for (size_t j = 0; j < 13; j++)
+        fprintf(fp2, "%ld %0.2lf\n", x[j].no, ogrenciAve[j]);
+    for (size_t j = 0; j < 6; j++)
+        fprintf(fp2, "%d. dersin sinif ortalamasi : %0.2lf\n", j + 1, dersAve[j]);
+    fprintf(fp2, "Sinif ortalamasi : %0.2lf\n", sinifAve);
 
     fclose(fp);
     fclose(fp2);
