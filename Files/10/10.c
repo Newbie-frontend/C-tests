@@ -31,13 +31,3 @@ int main(int argc, char const *argv[])
     fclose(fp2);
     return 0;
 }
-
-// forWrite = strchr(dizi, '\n');
-//     forWrite = forWrite + 2;
-//     while (forWrite != NULL)
-//     {
-//         fprintf(fp2, "\n");
-//         fputs(forWrite, fp2);
-//         forWrite = strchr(forWrite, '\n');
-//         forWrite = forWrite + 2;
-//     }
