@@ -16,9 +16,6 @@ int main(int argc, char const *argv[])
         ch = fgetc(fp);
         fputc(ch, fp3);
     }
-    
-    
-
     printf("Dosyalar basarili bir sekilde olusturuldu.\n");
     fclose(fp);
     fclose(fp2);
