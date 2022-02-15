@@ -1,0 +1,12 @@
+Veli Ozturk 3.5 80.50 70.25
+Ali Turkoglu 2.5 55.2 88.1
+Busra Yilmaz 3.5 66.5 20.10
+Ahmet Kaya 2.2 90 90
+Ekrem Hatipoglu 3.9 30 90
+Kerem Mutlu 3.6 70 80
+Huseyin yilmaz 1.5 50 60
+Beyza Birsen 2.71 62 38
+Murat Yilmaz 3.65 65.35 36.25
+Mert Canseven 2.63 90 90
+Sumeyra Gulac 3.7 90 100
+Yagmur Gundogan 1.8 59 89
