@@ -3,14 +3,14 @@
 #include <time.h> // To calculate CPU calculation time
 #include <stdlib.h>
 
-struct Data
+typedef struct Data
 {
     int IM;
     int JM;
     int iteration;
     int counter;
     int **a;
-};
+}data;
 
 /* function declaration */
 // void printBook(struct Data *book);
@@ -26,46 +26,46 @@ int main()
 
     // ---------------> Execution Time
 
-    data.IM = 1000;
-    data.JM = data.IM;
-    data.iteration = data.IM * 2;
-    data.counter = 0;
-    data.a = (int **)malloc(data.IM * sizeof(int *));
-    for (int i = 0; i < data.IM; i++)
-        data.a[i] = (int *)malloc(data.JM * sizeof(int));
-    for (int itr = 0; itr < data.iteration; itr++)
-    {
-        for (int i = 0; i < data.IM; i++)
-        {
-            for (int j = 0; j < data.JM; j++)
-            {
-                data.a[i][j] = data.counter++;
-                // printf("%d, ", data.a[i][j]);
-            }
-        }
-    }
-
-    // int IM = 1000;
-    // int JM = IM;
-    // int iteration = IM * 2;
-    // int counter = 0;
-    // int a[IM][JM];
-    // for (int itr = 0; itr < iteration; itr++)
+    // data.IM = 500;
+    // data.JM = data.IM;
+    // data.iteration = data.IM * 2;
+    // data.counter = 0;
+    // data.a = (int **)malloc(data.IM * sizeof(int *));
+    // for (int i = 0; i < data.IM; i++)
+    //     data.a[i] = (int *)malloc(data.JM * sizeof(int));
+    // for (int itr = 0; itr < data.iteration; itr++)
     // {
-    //     for (int i = 0; i < IM; i++)
+    //     for (int i = 0; i < data.IM; i++)
     //     {
-    //         for (int j = 0; j < JM; j++)
+    //         for (int j = 0; j < data.JM; j++)
     //         {
-    //             a[i][j] = counter++;
-    //             // printf("%d, ", a[i][j]);
+    //             data.a[i][j] = data.counter++;
+    //             // printf("%d, ", data.a[i][j]);
     //         }
     //     }
     // }
 
+    int IM = 700;
+    int JM = IM;
+    int iteration = IM * 2;
+    int counter = 0;
+    int a[IM][JM];
+    for (int itr = 0; itr < iteration; itr++)
+    {
+        for (int i = 0; i < IM; i++)
+        {
+            for (int j = 0; j < JM; j++)
+            {
+                a[i][j] = counter++;
+                // printf("%d, ", a[i][j]);
+            }
+        }
+    }
+
     // ---------------> Execution Time
 
     clock_t end = clock();
-    double elapsed = (end - start) / CLOCKS_PER_SEC;
+    double elapsed = (double)(end - start) / CLOCKS_PER_SEC;
     int minute = elapsed / 60;
     if (elapsed < 60)
     {
