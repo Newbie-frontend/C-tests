@@ -38,7 +38,7 @@ int main()
         konum2 = ftell(fp);
     }
     fseek(fp, 0L, 0); // for last element :-( it is pain in the a.. to check it again 
-    x = ftell(fp);    // because when we read the last element it 
+    x = ftell(fp);    // because when we read the last element it reaches end of file
     while (x < konum)
     {
         fgets(temp, 50, fp);
