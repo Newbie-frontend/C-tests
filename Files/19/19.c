@@ -37,7 +37,7 @@ int main()
         fgets(email, 50, fp);
         konum2 = ftell(fp);
     }
-    fseek(fp, 0L, 0); // for last element :-( it is a pain in the a.. to check it again 
+    fseek(fp, 0L, 0); // for last element :-( it is pain in the a.. to check it again 
     x = ftell(fp);    // because when we read the last element it 
     while (x < konum)
     {
