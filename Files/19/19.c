@@ -3,11 +3,11 @@
 
 int main()
 {
-    FILE *fp, *fp2;
-    char email[30];
-    char temp[30];
-    int konum;
-    int konum2;
+    FILE *fp, *fp2; // if we wanted to take all the data from the file and then process it 
+    char email[30]; // it would be much easier but i tried to do buy getting single data from
+    char temp[30];  // file and compare that with other elements of files.
+    int konum;      // it may take much time from cpu to process but it gets less space in RAM
+    int konum2;     // here this might not be important but when we deal with big datas it will be important 
     int x;
     int m = 0;
     fp = fopen("akademik.txt", "r");
