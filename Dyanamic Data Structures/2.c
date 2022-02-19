@@ -38,7 +38,6 @@ int main()
     dugum *basptr = NULL;
     FILE *filep;
     FILE *filep2;
-    int secim, yas, s, a;
     dugum *yeniptr;
     dugum *onceptr;
     dugum *sonraptr;
