@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 typedef struct dugum
 {
@@ -10,9 +12,9 @@ typedef struct dugum
 } dugum;
 
 int monu();
-void kuyrukyaz(dugum *);
+void siraliyaz(dugum *);
 char agacaekle(dugum **, char *, long);
-void kuyruktansil(dugum **);
+long arama(dugum *, char *);
 
 int main()
 {
@@ -28,15 +30,25 @@ int main()
             printf("Eklenecek adi giriniz : ");
             scanf("%s", ad);
             printf("Eklenecek telefonu giriniz : ");
-            scanf("%ld", tele);
+            scanf("%ld", &tele);
             s = agacaekle(&kokptr, ad, tele);
             if (s != 0)
                 printf("Eleman basarili bir sekilde eklendi \n");
             else
                 printf("Ekleme basarisiz \n");
             break;
+        case 1:
+            siraliyaz(kokptr);
+            printf("\n");
+            break;
         case 2:
-            kuyruktansil(&kokptr);
+            printf("Bulunacak Elemanin adini giriniz : ");
+            scanf("%s", ad);
+            tele = arama(kokptr, ad);
+            if (tele == 0)
+                printf("istenen eleman bulunamadi \n");
+            else
+                printf("%sin numarasi %ld\n", ad, tele);
             break;
         }
 
@@ -55,54 +67,54 @@ int monu()
     scanf("%d", &secim);
     return secim;
 }
-void kuyrukyaz(dugum *p)
+void siraliyaz(dugum *p)
 {
-    if (p == NULL)
-        printf("Kuyruk bos. \n");
-    else
+    if (p != NULL)
     {
-        while (p != NULL)
+        siraliyaz(p->lPtr);
+        printf("%s, ", p->ad);
+        siraliyaz(p->rPtr);
+    }
+}
+
+char agacaekle(dugum **p, char *isim, long tele)
+{
+    if (*p == NULL)
+    {
+        *p = malloc(sizeof(dugum));
+        if (*p != NULL)
         {
-            printf("%c --> ", p->harf);
-            p = p->ptr;
+            strcpy((*p)->ad, isim);
+            (*p)->telefon = tele;
+            (*p)->rPtr = NULL;
+            (*p)->lPtr = NULL;
         }
-        printf("NULL\n\n");
-    }
-}
-
-char agacaekle(dugum **b, char *ad, long tele)
-{
-    dugum *yeniptr;
-    yeniptr = malloc(sizeof(dugum));
-
-    if (yeniptr != NULL)
-    {
-        yeniptr->harf = harf;
-        yeniptr->ptr = NULL;
-
-        if (*b == NULL)
-            *b = yeniptr;
         else
-            (*s)->ptr = yeniptr;
-        *s = yeniptr;
-        return harf;
+            printf("RAM dolu");
     }
     else
-        return '\0';
+    {
+        if (*isim > *((*p)->ad)) // butun ilk harfleri buyuk yada kucuk sayalim
+            agacaekle(&((*p)->rPtr), isim, tele);
+        else if (*isim < *((*p)->ad))
+            agacaekle(&((*p)->lPtr), isim, tele);
+        else if (strcmp(isim, (*p)->ad) == 0)
+            printf("Ayni ismi girdiniz.\n");
+        else
+            agacaekle(&((*p)->lPtr), isim, tele);
+    }
 }
 
-void kuyruktansil(dugum **b)
+long arama(dugum *p, char *isim) // really fast searching technique
 {
-    if (*b != NULL)
-    {
-        dugum *geciciptr;
-        geciciptr = *b;
-        *b = (*b)->ptr;
-        if (*b == NULL)
-            *s = NULL;
-        free(geciciptr);
-        printf("Bastaki eleman silindi\n");
-    }
-    else
-        printf("Kuyrukta eleman yok\n");
+    // Base Cases: root is null or key is present at root
+    if (p == NULL || (strcmp(p->ad, isim) == 0))
+        return p->telefon;
+
+    // Key is greater than root's key
+    if (*(p->ad) < *isim)
+        return arama(p->rPtr, isim);
+
+    // Key is smaller than root's key
+    return arama(p->lPtr, isim);
 }
