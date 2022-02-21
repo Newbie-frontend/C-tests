@@ -11,11 +11,13 @@ int monu();
 void listeyaz(dugum *);
 int listesay(dugum *);
 int ekle(dugum **, int);
+void silN(dugum **, int);
 
 int main()
 {
     dugum *basptr = NULL;
     int secim, yas, s, a;
+    int eleman;
     while ((secim = monu()) != 3)
         switch (secim)
         {
@@ -34,6 +36,11 @@ int main()
         case 2:
             a = listesay(basptr);
             printf("Listedeki dugum sayisi %d dir.\n", a);
+            break;
+        case 4:
+            printf("hangi eleman silinsin : ");
+            scanf("%d", &eleman);
+            silN(&basptr, eleman);
             break;
         }
 
@@ -118,5 +125,21 @@ int listesay(dugum *p)
             p = p->ptr;
         }
         return a;
+    }
+}
+void silN(dugum **p, int n)
+{
+    dugum *temp;
+    dugum *tempBefore;
+    if (*p != NULL)
+    {
+        temp = *p;
+        tempBefore = NULL;
+        for (int i = 0; temp->ptr != NULL && i < n - 1; i++)
+        {
+            tempBefore = temp;
+            temp = temp->ptr;
+        }
+        tempBefore->ptr = temp->ptr;
     }
 }
