@@ -9,6 +9,7 @@ Dortgen::Dortgen(double a, double b, double c, double d)
     soly = b;
     sagx = c;
     sagy = d;
+   
 }
 void Dortgen::yaz()
 {
@@ -41,12 +42,12 @@ double Dortgen::getCevre()
 {
     return 2 * (getBoy() + getEn());
 }
-Dortgen Dortgen::buyukOlan(Dortgen a)
+Dortgen Dortgen::buyukOlan(Dortgen b)
 {
-    if (this->getAlan() > a.getAlan())
+    if (this->getAlan() > b.getAlan())
         return *this;
     else
-        return a;
+        return b;
 }
 void Dortgen::kareyap()
 {
